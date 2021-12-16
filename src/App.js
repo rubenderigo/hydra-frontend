@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy, Suspense } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
+import PropagateLoader from 'react-spinners/PropagateLoader';
+
+const Unauthenticated = lazy(() =>
+  import('routers/Unauthenticated/Unauthenticated')
+);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Suspense delayMs={500} fallback={<PropagateLoader color={'#9a31e4'} />}>
+        <Unauthenticated />
+      </Suspense>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
