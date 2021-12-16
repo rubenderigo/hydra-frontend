@@ -1,0 +1,34 @@
+.sing-in-form {
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.sing-in-form label {
+    color: #fbeaeb;
+    margin-bottom: 5px;
+}
+
+.sing-in-form p {
+  font-size: 14px;
+  color: #fbeaeb;
+}
+
+.sing-in-form input[name="password"]{
+  margin: auto;
+}
+
+.sing-in-form button {
+  margin-top: 30px;
+  font-weight: normal;
+}
+
+.container-button {
+  display: flex;
+  justify-content: center;
+}
+
+.sing-in-form p a {
+  font-weight: bold;
+  color: #fbeaeb;
+  text-decoration-color: #fbeaeb;
+}
