@@ -1,7 +1,7 @@
-import SingIn from "components/SingIn/Singin";
+import SingIn from 'components/SingIn/SingIn';
 
 const SingInPage = () => {
-    return <SingIn />
-}
+  return <SingIn />;
+};
 
 export default SingInPage;

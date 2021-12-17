@@ -12,7 +12,7 @@ const SingIn = () => {
         className={styles['img-sing-in']}
       />
       <div className={styles['content']}>
-        <p>Bienvenido/a de nuevo!</p>
+        <p>¡Bienvenido/a de nuevo!</p>
         <h2>Inicia sesión</h2>
         <SingInForm />
       </div>
