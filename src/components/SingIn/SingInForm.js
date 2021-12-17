@@ -17,13 +17,22 @@ const SingInForm = () => {
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={Yup.object({
-          username: Yup.string().required('Obligatorio'),
-          password: Yup.string().required('Obligatorio'),
+          username: Yup.string().required('requerido *'),
+          password: Yup.string().required('requerido *'),
         })}
       >
         <Form>
-          <Input name="username" label="username *" />
-          <Input name="password" label="contraseña *" />
+          <Input
+            name="username"
+            label="Nombre de usuario"
+            placeholder="Nombre de usuario"
+          />
+          <Input
+            name="password"
+            label="Contraseña"
+            placeholder="Contraseña"
+            type="password"
+          />
           <p>
             ¿ No tienes una cuenta ?{' '}
             <Link to="/registro">
@@ -32,7 +41,7 @@ const SingInForm = () => {
           </p>
           <div className={styles['container-button']}>
             <Button className={'button-primary'} type="submit">
-              Continuar
+              Iniciar sesión
             </Button>
           </div>
         </Form>

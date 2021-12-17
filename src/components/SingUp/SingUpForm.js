@@ -21,25 +21,34 @@ const SingUpForm = () => {
         }}
         onSubmit={(values) => console.log(values)}
         validationSchema={Yup.object({
-          name: Yup.string().required('Obligatorio'),
-          lastname: Yup.string().required('Obligatorio'),
-          username: Yup.string().required('Obligatorio'),
+          name: Yup.string().required('requerido *'),
+          lastname: Yup.string().required('requerido *'),
+          username: Yup.string().required('requerido *'),
           password: Yup.string()
-            .required('Obligatorio')
-            .min(6,'La contraseña debe tener una longitud minima de 6 caracteres'),
-          dateBirth: Yup.date().required('Obligatorio'),
-          email: Yup.string().required('Obligatorio'),
+            .required('requerido *')
+            .min(6, 'longitud minima de 6 caracteres'),
+          dateBirth: Yup.date().required('requerido *'),
+          email: Yup.string().required('requerido *'),
         })}
       >
         <Form>
           <div className={styles['name-surname-container']}>
-            <Input name="name" label="Nombre" />
-            <Input name="lastname" label="Apellido" />
+            <Input name="name" label="Nombre" placeholder="Nombre" />
+            <Input name="lastname" label="Apellido" placeholder="Apellido" />
           </div>
-          <Input name="username" label="Nombre de usuario" />
+          <Input
+            name="username"
+            label="Nombre de usuario"
+            placeholder="Nombre de usuario"
+          />
           <Input name="dateBirth" label="Fecha de nacimiento" type="date" />
-          <Input name="email" label="Email" type="email" />
-          <Input name="password" label="Contraseña" type="password" />
+          <Input name="email" label="Email" type="email" placeholder="Email" />
+          <Input
+            name="password"
+            label="Contraseña"
+            type="password"
+            placeholder="Contraseña"
+          />
           <p className={styles['p']}>
             ¿ Ya tienes una cuenta ?{' '}
             <Link to="/iniciar-sesion">
@@ -48,7 +57,7 @@ const SingUpForm = () => {
           </p>
           <div className={styles['container-button']}>
             <Button className={'button-primary'} type="submit">
-              Iniciar sesión
+              Continuar
             </Button>
           </div>
         </Form>

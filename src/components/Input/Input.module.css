@@ -13,12 +13,16 @@
   margin-bottom: 5px;
 }
 
-.error {
-  color: red;
-  margin-top: 5px;
-  font-size: 14px;
-}
-
 .input:focus {
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+  color: #FFF;
+  background-color: #CA5151;
+  border-radius: 12px;
+  font-size: 14px;
+  padding: 3px 8px 3px 8px;
+  margin-left: 12px;
+  opacity: 0.9;
 }
