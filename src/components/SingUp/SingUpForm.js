@@ -1,15 +1,16 @@
+import BeatLoader from 'react-spinners/BeatLoader';
+
 import FormikWrapper from 'components/Form';
 import FieldController from 'components/Form/FieldController';
 import HaveAccount from 'components/Form/HaveAccount/HaveAccount';
 import validationSchema from './validationSchema';
 import { initialValues } from './initialValues';
+import { useSubmit } from 'hooks/submit';
 
 import styles from './SingUpForm.module.css';
 
 const SingUpForm = () => {
-  const onSubmit = (values) => {
-    console.log({ values });
-  };
+  const { onSubmit, promiseInProgress } = useSubmit('sign_up');
 
   return (
     <div className={styles['sing-up-form']}>
@@ -63,7 +64,13 @@ const SingUpForm = () => {
         />
         <HaveAccount haveAccount />
         <div className={styles['container-button']}>
-          <FieldController typeField="button">Continuar</FieldController>
+          <FieldController typeField="button">
+            {promiseInProgress ? (
+              <BeatLoader color="#fbeaeb" size="4px" />
+            ) : (
+              'continuar'
+            )}{' '}
+          </FieldController>
         </div>
       </FormikWrapper>
     </div>
