@@ -5,12 +5,12 @@ import FieldController from 'components/Form/FieldController';
 import HaveAccount from 'components/Form/HaveAccount/HaveAccount';
 import validationSchema from './validationSchema';
 import { initialValues } from './initialValues';
-import { useSubmit } from 'hooks/submit';
+import { useSingIn } from 'hooks/auth';
 
 import styles from 'components/SingIn/SingInForm.module.css';
 
 const SingInForm = () => {
-  const { onSubmit, error, promiseInProgress } = useSubmit('sign_in');
+  const { onSubmit, error, promiseInProgress } = useSingIn();
 
   return (
     <div className={styles['sing-in-form']}>
@@ -44,7 +44,7 @@ const SingInForm = () => {
           </FieldController>
         </div>
         {error && (
-          <p className={styles['error']}>no coinciden las credenciales</p>
+          <p className={styles['error']}>las credenciales no coinciden</p>
         )}
       </FormikWrapper>
     </div>

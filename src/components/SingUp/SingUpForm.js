@@ -5,12 +5,12 @@ import FieldController from 'components/Form/FieldController';
 import HaveAccount from 'components/Form/HaveAccount/HaveAccount';
 import validationSchema from './validationSchema';
 import { initialValues } from './initialValues';
-import { useSubmit } from 'hooks/submit';
+import { useSingUp } from 'hooks/auth';
 
 import styles from './SingUpForm.module.css';
 
 const SingUpForm = () => {
-  const { onSubmit, promiseInProgress } = useSubmit('sign_up');
+  const { onSubmit, promiseInProgress } =  useSingUp();
 
   return (
     <div className={styles['sing-up-form']}>
