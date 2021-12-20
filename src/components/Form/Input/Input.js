@@ -1,6 +1,6 @@
 import { useField } from 'formik';
 
-import styles from 'components/Input/Input.module.css';
+import styles from './Input.module.css';
 
 const Input = ({ label, type, placeholder, ...props }) => {
   const [field, meta] = useField(props);

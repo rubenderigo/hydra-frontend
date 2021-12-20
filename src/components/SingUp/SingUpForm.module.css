@@ -3,17 +3,6 @@
   margin-top: 20px;
 }
 
-.sing-up-form .p {
-  font-size: 14px;
-  color: #fbeaeb;
-}
-
-.sing-up-form .p a {
-  font-weight: bold;
-  color: #fbeaeb;
-  text-decoration-color: #fbeaeb;
-}
-
 .sing-up-form label {
   color: #fbeaeb;
   margin-bottom: 5px;
@@ -21,17 +10,8 @@
 }
 
 .sing-up-form input {
-  margin-bottom:  -10px;
+  margin-bottom: -10px;
   padding: 17px;
-}
-
-.name-surname-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.name-surname-container input {
-  width: 150px;
 }
 
 .sing-up-form button {
@@ -44,11 +24,15 @@
   justify-content: center;
 }
 
-.name-surname-container label  {
-    color: #9a31e4;
+.name-surname-container {
+  display: flex;
+  justify-content: space-between;
 }
 
-.sing-up-form span {
-    margin-top: 12px;
-    font-size: 12px;
-} 
+.name-surname-container input {
+  width: 150px;
+}
+
+.name-surname-container label {
+  color: #9a31e4;
+}

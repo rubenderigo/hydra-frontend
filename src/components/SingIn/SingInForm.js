@@ -1,13 +1,14 @@
 import { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker';
-import { Formik, Form } from 'formik';
-import * as Yup from 'yup';
-
-import Button from 'components/Button/Button';
-import Input from 'components/Input/Input';
-import SessionController from 'networking/controllers/SessionController';
 import BeatLoader from 'react-spinners/BeatLoader';
+
+import FormikWrapper from 'components/Form';
+import FieldController from 'components/Form/FieldController';
+import SessionController from 'networking/controllers/SessionController';
+import HaveAccount from 'components/Form/HaveAccount/HaveAccount';
+import validationSchema from './validationSchema';
+import { initialValues } from './initialValues';
 
 import styles from 'components/SingIn/SingInForm.module.css';
 
@@ -20,7 +21,6 @@ const SingInForm = () => {
     const formData = new FormData();
     formData.append('username', values.username);
     formData.append('password', values.password);
-
     try {
       await trackPromise(SessionController.signIn(formData));
       setError(false);
@@ -28,51 +28,44 @@ const SingInForm = () => {
     } catch (requestError) {
       setError(true);
     }
+    console.log({ values });
   };
 
   return (
     <div className={styles['sing-in-form']}>
-      <Formik
-        initialValues={{
-          username: '',
-          password: '',
-        }}
+      <FormikWrapper
+        initialValues={initialValues}
         onSubmit={onSubmit}
-        validationSchema={Yup.object({
-          username: Yup.string().required('requerido *'),
-          password: Yup.string().required('requerido *'),
-        })}
+        validationSchema={validationSchema}
       >
-        <Form>
-          <Input
-            name="username"
-            label="Nombre de usuario"
-            placeholder="Nombre de usuario"
-          />
-          <Input
-            name="password"
-            label="Contraseña"
-            placeholder="Contraseña"
-            type="password"
-          />
-          <p>
-            ¿ No tienes una cuenta ?{' '}
-            <Link to="/registro">
-              <span>Registate</span>
-            </Link>
-          </p>
-          <div className={styles['container-button']}>
-            <Button className={'button-primary'} type="submit">
-              {promiseInProgress ? (
-                <BeatLoader color="#fbeaeb" size="4px" />
-              ) : (
-                'Iniciar sesión'
-              )}{' '}
-            </Button>
-          </div>
-          {error && <p className={styles['error']}>no coinciden las credenciales</p>}
-        </Form>
-      </Formik>
+        <FieldController
+          typeField="input"
+          name="username"
+          label="Nombre de usuario"
+          placeholder="Nombre de usuario"
+          typeInput="text"
+        />
+        <FieldController
+          typeField="input"
+          name="password"
+          label="Contraseña"
+          placeholder="Contraseña"
+          typeInput="password"
+        />
+        <HaveAccount haveAccount={false}/>
+        <div className={styles['button-container']}>
+          <FieldController typeField="button">
+            {promiseInProgress ? (
+              <BeatLoader color="#fbeaeb" size="4px" />
+            ) : (
+              'iniciar sesión'
+            )}{' '}
+          </FieldController>
+        </div>
+        {error && (
+          <p className={styles['error']}>no coinciden las credenciales</p>
+        )}
+      </FormikWrapper>
     </div>
   );
 };

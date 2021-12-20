@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-import Button from '../Button/Button';
 import logo from 'assets/logo.png';
 import onboarding from 'assets/onboarding.png';
 
@@ -18,13 +17,12 @@ const Onboarding = () => {
         <img alt="onboarding" src={logo} className={styles['logo']} />
         <h1>Hydra</h1>
         <p>Dar tu opinión nunca fue tan fácil</p>
-        <div>
-          <Link to="/registro">
-            {' '}
-            <Button className={'button-primary'}>comenzar ahora</Button>
+        <div className={styles['link']}>
+          <Link to="/registro" className={styles['sing_up_link']}>
+            comenzar ahora
           </Link>
-          <Link to="/iniciar-sesion">
-            <Button className={'button-secondary'}>iniciar sesión</Button>
+          <Link to="/iniciar-sesion" className={styles['sing_in_link']}>
+            iniciar sesión
           </Link>
         </div>
       </div>

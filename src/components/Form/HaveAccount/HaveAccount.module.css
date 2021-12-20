@@ -1,0 +1,10 @@
+.container p {
+  font-size: 14px !important;
+  color: #fbeaeb !important;
+}
+
+.container a {
+  font-weight: bold;
+  color: #fbeaeb;
+  text-decoration-color: #fbeaeb;
+}

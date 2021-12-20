@@ -1,5 +1,5 @@
-import Button from 'components/Button/Button';
-import RadioButton from 'components/RadioButton/RadioButton';
+import Button from 'components/Form/Button/Button';
+import RadioButton from 'components/TermsConditions/RadioButton/RadioButton';
 import styles from './Card.module.css';
 
 const Card = () => {

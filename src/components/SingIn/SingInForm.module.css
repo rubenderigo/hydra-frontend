@@ -8,11 +8,6 @@
     margin-bottom: 5px;
 }
 
-.sing-in-form p {
-  font-size: 14px;
-  color: #fbeaeb;
-}
-
 .sing-in-form input[name="password"]{
   margin: auto;
 }
@@ -22,15 +17,9 @@
   font-weight: normal;
 }
 
-.container-button {
+.sing-in-form .button-container {
   display: flex;
   justify-content: center;
-}
-
-.sing-in-form p a {
-  font-weight: bold;
-  color: #fbeaeb;
-  text-decoration-color: #fbeaeb;
 }
 
 .error {
