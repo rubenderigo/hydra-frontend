@@ -32,3 +32,16 @@
   color: #fbeaeb;
   text-decoration-color: #fbeaeb;
 }
+
+.error {
+  position: absolute;
+  text-align: center;
+  margin-top: 40px;
+  margin-left: 110px;
+  color: #FFF;
+  background-color: #CA5151;
+  border-radius: 12px;
+  font-size: 14px;
+  padding: 3px 8px 3px 8px;
+  opacity: 0.9;
+}

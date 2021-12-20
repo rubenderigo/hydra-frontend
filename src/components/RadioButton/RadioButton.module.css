@@ -1,0 +1,9 @@
+.radio-button input {
+    margin-right: 7px;
+    background-color: #9A31E4;
+}
+
+.radio-button label{
+    color: #9A31E4;
+    font-size: 16px;
+}
