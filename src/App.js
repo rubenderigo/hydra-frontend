@@ -1,11 +1,11 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import Loading from 'components/Loading/Loading';
+import Loading from 'components/Loading';
 import { useAuth } from 'context/UserContext';
 
-const Authenticated = lazy(() => import('routers/Authenticated/Authenticated'));
-const Unauthenticated = lazy(() => import('routers/Unauthenticated/Unauthenticated'));
+const Authenticated = lazy(() => import('routers/Authenticated'));
+const Unauthenticated = lazy(() => import('routers/Unauthenticated'));
 
 const App = () => {
   const { isAuthenticated } = useAuth();

@@ -10,7 +10,7 @@ const Authenticated = () => {
       <Route exact path="/terminos-y-condiciones">
         <TermsConditionsPage />
       </Route>
-      <Route exact path="/inicio">
+      <Route exact path="/">
         <HomePage />
       </Route>
     </Switch>
