@@ -1,22 +1,11 @@
 .sing-up-container {
-  width: 100%;
-  height: 100vh;
-  background-color: #fbeaeb;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.img-sing-up {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 0;
-}
-
-.content {
+.sing-up-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -24,15 +13,15 @@
   z-index: 1;
 }
 
-.content h2,
-.content p {
+.sing-up-container h2,
+.sing-up-container p {
   color: #9a31e4;
 }
 
-.content h2 {
+.sing-up-container h2 {
   font-size: 55px;
 }
 
-.content p {
+.sing-up-container p {
   font-size: 24px;
 }
