@@ -3,11 +3,6 @@
   margin-top: 30px;
 }
 
-.sing-in-form label {
-    color: #fbeaeb;
-    margin-bottom: 5px;
-}
-
 .sing-in-form input[name="password"]{
   margin: auto;
 }

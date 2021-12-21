@@ -9,7 +9,7 @@ const Card = () => {
   const [checked, setChecked] = useState(false);
   const history = useHistory();
 
-  const handleClick = () => checked && history.push('/inicio');
+  const handleClick = () => checked && history.push('/');
 
   return (
     <div className={styles['card-container']}>
