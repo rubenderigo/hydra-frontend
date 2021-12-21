@@ -1,5 +1,7 @@
-import Button from 'components/Form/Button/Button';
+import { Link } from 'react-router-dom';
+
 import RadioButton from 'components/TermsConditions/RadioButton/RadioButton';
+
 import styles from './Card.module.css';
 
 const Card = () => {
@@ -61,8 +63,10 @@ const Card = () => {
           </ul>
         </div>
         <div className={styles['content-buttons-accept']}>
-          <RadioButton label="Acepto los terminos y condiciones" />
-          <Button className="button-primary">Continuar</Button>
+          <RadioButton label="Acepto los terminos y condiciones"/>
+          <Link to="/registro" className={styles['next_link']}>
+            continuar
+          </Link>
         </div>
       </div>
     </div>
