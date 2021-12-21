@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import RadioButton from 'components/TermsConditions/RadioButton/RadioButton';
+import RadioButton from 'components/TermsConditions/RadioButton';
 
 import styles from './Card.module.css';
 

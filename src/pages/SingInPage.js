@@ -1,4 +1,4 @@
-import SingIn from 'components/SingIn/SingIn';
+import SingIn from 'components/SingIn';
 
 const SingInPage = () => {
   return <SingIn />;
