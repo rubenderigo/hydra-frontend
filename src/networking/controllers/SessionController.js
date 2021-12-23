@@ -17,7 +17,7 @@ class SessionController {
     const response = await axios.get(generateURL(`/person/${userId}`), {
       headers: { Authorization: `Bearer ${token}` },
     });
-    return await response.data;
+    return await response.data.data;
   }
 }
 

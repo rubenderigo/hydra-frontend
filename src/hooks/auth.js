@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useHistory } from 'react-router-dom';
 import { trackPromise, usePromiseTracker } from 'react-promise-tracker';
 
@@ -56,24 +56,18 @@ export const useSingIn = () => {
 export const useAccount = () => {
   const { user, setState } = useAuth();
 
-  const get = async () => {
+  const get = useCallback(async () => {
     const { userId, token } = getSession();
-    const response = await SessionController.getAccount(
-      userId,
-      token
-    );
-
-    const data = await response.data
+    const response = await SessionController.getAccount(userId, token);
 
     setState((previousState) => {
       return {
         ...previousState,
         isAuthenticated: true,
-        user: data,
+        user: response,
       };
     });
-  }
+  }, []);
 
-  get()
-  return { user };
+  return { get };
 };
