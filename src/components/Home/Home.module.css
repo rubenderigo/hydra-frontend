@@ -1,0 +1,11 @@
+.home {
+    display: flex;
+}
+
+.content {
+    width: 80%;
+    background-image: url('../../assets/background-home.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
