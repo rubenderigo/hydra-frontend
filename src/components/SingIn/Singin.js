@@ -1,4 +1,3 @@
-import background from 'assets/background-singin.png';
 import OnboardingLayout from 'layouts/OnboardingLayout';
 import SingInForm from './SingInForm';
 
@@ -6,10 +5,7 @@ import styles from './SingIn.module.css';
 
 const SingIn = () => {
   return (
-    <OnboardingLayout
-      background={background}
-      atlBackground="background sing in"
-    >
+    <OnboardingLayout background="sing-in">
       <div className={styles['sign-in-container']}>
         <p>¡Bienvenido/a de nuevo!</p>
         <h2>Inicia sesión</h2>

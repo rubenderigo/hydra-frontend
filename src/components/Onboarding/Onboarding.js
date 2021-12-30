@@ -1,14 +1,13 @@
 import { Link } from 'react-router-dom';
 
 import logo from 'assets/logo.png';
-import onboarding from 'assets/onboarding.png';
 import OnboardingLayout from 'layouts/OnboardingLayout';
 
 import styles from './Onboarding.module.css';
 
 const Onboarding = () => {
   return (
-    <OnboardingLayout background={onboarding} atlBackground="onboarding">
+    <OnboardingLayout background="onboarding">
       <div className={styles['onboarding-container']}>
         <img alt="logo" src={logo} className={styles['logo']} />
         <h1>Hydra</h1>

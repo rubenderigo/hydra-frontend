@@ -1,15 +1,26 @@
 .layout {
   width: 100%;
   height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   background-color: #fbeaeb;
 }
 
-.img {
-  margin: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 0;
+.onboarding {
+  background-image: url('../assets//background-onboarding.svg');
+}
+
+.sing-in {
+  background-image: url('../assets/background-singin.svg');
+}
+
+.sing-up {
+  background-image: url('../assets/background-singup.svg');
+}
+
+.terms-conditions {
+  background-image: url('../assets/background-terms-conditions.svg');
 }
 
 .content {
@@ -19,4 +30,3 @@
   justify-content: center;
   align-items: center;
 }
-

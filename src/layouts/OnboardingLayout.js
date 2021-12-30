@@ -1,11 +1,9 @@
-import styles from './OnboardingLayout.module.css'
+import styles from './OnboardingLayout.module.css';
 
-const OnboardingLayout = ({children, background, atlBackground}) => {
+const OnboardingLayout = ({ children, background }) => {
   return (
-    <div className={styles['layout']}>
-      <div className={styles['content']}>
-          {children}
-      </div>
+    <div className={`${styles['layout']} ${styles[background]}`}>
+      <div className={styles['content']}>{children}</div>
     </div>
   );
 };
