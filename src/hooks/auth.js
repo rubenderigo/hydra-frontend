@@ -9,6 +9,7 @@ import { getSession } from 'helpers/session';
 export const useSingUp = () => {
   const history = useHistory();
   const [error, setError] = useState(false);
+  const { setState } = useAuth();
   const { promiseInProgress } = usePromiseTracker();
 
   const onSubmit = async (values) => {
@@ -24,6 +25,12 @@ export const useSingUp = () => {
     try {
       await trackPromise(SessionController.signUp(formData));
       history.push('/terminos-y-condiciones');
+      setState((previousState) => {
+        return {
+          ...previousState,
+          isAuthenticated: true
+        };
+      });
     } catch (requestError) {
       setError(true);
     }
@@ -35,6 +42,7 @@ export const useSingUp = () => {
 export const useSingIn = () => {
   const history = useHistory();
   const [error, setError] = useState(false);
+  const { setState } = useAuth();
   const { promiseInProgress } = usePromiseTracker();
 
   const onSubmit = async (values) => {
@@ -44,7 +52,13 @@ export const useSingIn = () => {
 
     try {
       await trackPromise(SessionController.signIn(formData));
-      history.push('/inicio');
+      history.push('/');
+      setState((previousState) => {
+        return {
+          ...previousState,
+          isAuthenticated: true
+        };
+      });
     } catch (requestError) {
       setError(true);
     }
