@@ -1,0 +1,33 @@
+.header {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  align-items: center;
+  border-bottom-right-radius: 55px;
+}
+
+p.hello {
+  font-size: 28px;
+  color: #9a31e4;
+  font-weight: bold;
+}
+
+p.username {
+  font-size: 22px;
+  color: #d4c0e2;
+}
+
+.img-user {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  background: linear-gradient(180deg, #9a31e4 0%, #3c9ede 100%);
+}
+
+.img-user img {
+  border-radius: 50%;
+  width: 100%;
+}
