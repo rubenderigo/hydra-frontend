@@ -23,12 +23,14 @@ export const useSingUp = () => {
     formData.append('password_confirmation', values.password);
 
     try {
-      await trackPromise(SessionController.signUp(formData));
+      const response = await trackPromise(SessionController.signUp(formData));
       history.push('/terminos-y-condiciones');
       setState((previousState) => {
         return {
           ...previousState,
-          isAuthenticated: true
+          user: response.user,
+          isAuthenticated: true,
+          typeUser: response.typeUser,
         };
       });
     } catch (requestError) {
@@ -51,12 +53,14 @@ export const useSingIn = () => {
     formData.append('password', values.password);
 
     try {
-      await trackPromise(SessionController.signIn(formData));
+      const response = await trackPromise(SessionController.signIn(formData));
       history.push('/');
       setState((previousState) => {
         return {
           ...previousState,
-          isAuthenticated: true
+          user: response.user,
+          isAuthenticated: true,
+          typeUser: response.typeUser,
         };
       });
     } catch (requestError) {
