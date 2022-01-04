@@ -1,14 +1,23 @@
-import { Link } from 'react-router-dom';
+import { useSingOut } from 'hooks/auth';
+import BeatLoader from 'react-spinners/BeatLoader';
 
 import styles from './SingOut.module.css';
 
 const SingOut = () => {
+  const { singOut, promiseInProgress } = useSingOut();
+
   return (
     <div className={styles['link']}>
-      <Link to="/" className={styles['sing-out-link']}>
-        <span className="material-icons">logout</span>
-        cerrar sesión
-      </Link>
+      <button className={styles['sing-out']} onClick={singOut}>
+        {promiseInProgress ? (
+          <BeatLoader color="#ca5151" size="3px" />
+        ) : (
+          <>
+            <span className="material-icons">logout</span>
+            cerrar sesión
+          </>
+        )}
+      </button>
     </div>
   );
 };

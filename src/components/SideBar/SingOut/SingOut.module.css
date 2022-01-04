@@ -1,27 +1,13 @@
-.link {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 15px;
-}
-
-.link a {
+.sing-out {
+  margin-bottom: 30px;
   border-radius: 24px;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;
-  text-decoration: none;
-  padding: 12px 15px 12px 15px;
-  width: 130px;
-}
-
-.link a:hover {
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
-}
-
-.sing-out-link {
+  width: 170px;
+  height: 40px;
+  border: none;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,6 +15,10 @@
   background-color: #fff;
 }
 
-.sing-out-link span {
+.sing-out:hover {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sing-out span {
   margin-right: 10px;
 }
