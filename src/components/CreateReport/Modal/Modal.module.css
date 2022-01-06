@@ -1,0 +1,28 @@
+.modal-create-report {
+  width: 961px;
+  height: 739px;
+  background-color: #fff;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-content {
+  margin-left: 40px;
+  width: 90%;
+}
+
+.modal-address-photo,
+.modal-type_report-assessment,
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-type_report-assessment {
+  margin-top: 10px;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}

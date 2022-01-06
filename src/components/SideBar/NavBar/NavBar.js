@@ -1,6 +1,6 @@
 import styles from './NavBar.module.css';
 
-const NavBar = () => {
+const NavBar = ({ showCreateReport }) => {
   return (
     <div className={styles['menu']}>
       <nav>
@@ -13,9 +13,13 @@ const NavBar = () => {
             <span className="material-icons">account_circle</span>
             Mi perfil
           </li>
-          <li>
+          <li onClick={showCreateReport}>
             <span className="material-icons">rate_review</span>
-            Mis reportes
+            Crear reporte
+          </li>
+          <li>
+            <span className="material-icons">notes</span>
+            Mis Reportes
           </li>
           <li>
             <span className="material-icons">settings</span>

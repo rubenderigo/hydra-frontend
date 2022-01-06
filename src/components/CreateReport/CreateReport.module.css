@@ -1,0 +1,9 @@
+.create-modal {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(154, 49, 228, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

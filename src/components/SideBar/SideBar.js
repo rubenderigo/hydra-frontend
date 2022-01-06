@@ -4,14 +4,13 @@ import SingOut from './SingOut/SingOut';
 
 import styles from './SideBar.module.css';
 
-const SideBar = () => {  
-
+const SideBar = ({ showCreateReport }) => {
   return (
     <div className={styles['side-bar']}>
       <Header />
       <div className={styles['content']}>
         <div>
-          <NavBar />
+          <NavBar showCreateReport={showCreateReport} />
           <SingOut />
         </div>
       </div>
