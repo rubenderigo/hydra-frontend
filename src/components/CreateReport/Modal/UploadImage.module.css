@@ -1,23 +1,4 @@
-.UploadImageWrapper {
-  margin: 3px 0px;
-  width: 20%;
+.upload-image {
   display: flex;
   align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.IconsWrapper {
-  display: flex;
-}
-
-.UploadImageLabel {
-  height: 24px;
-  cursor: pointer;
-}
-
-.UploadInput {
-  opacity: 0;
-  position: absolute;
-  z-index: -1;
 }

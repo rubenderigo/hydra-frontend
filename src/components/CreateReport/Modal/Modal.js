@@ -1,9 +1,8 @@
-import { useState } from 'react';
+import { useFormik } from 'formik';
 
 import {
   Rating,
   TextField,
-  FormControl,
   FormControlLabel,
   RadioGroup,
   Radio,
@@ -14,39 +13,52 @@ import Button from './Button';
 import styles from './Modal.module.css';
 
 const Modal = ({ showCreateReport }) => {
-  const [value, setValue] = useState(1);
-  const [photoValue, setPhotoValue] = useState(null);
-
-  const photoReturn = (photo) => {
-    setPhotoValue(photo);
-  };
+  const formik = useFormik({
+    initialValues: {
+      address: '',
+      description: '',
+      typeReport: '',
+      rating: 1,
+      photo: null,
+    },
+    onSubmit: (values) => console.log(values),
+  });
 
   return (
     <div className={styles['modal-create-report']}>
       <div className={styles['modal-content']}>
-        <div className={styles['modal-address-photo']}>
+        <form onSubmit={formik.handleSubmit}>
+          <div className={styles['modal-address-photo']}>
+            <TextField
+              fullWidth
+              id="address"
+              name="address"
+              label="Dirección"
+              variant="standard"
+              color="secondary"
+              margin="dense"
+              onChange={formik.handleChange}
+            />
+            <UploadImage formik={formik} />
+          </div>
           <TextField
-            id="standard-basic"
-            label="Dirección"
+            id="description"
+            name="description"
+            placeholder="Escriba su reporte aquí..."
+            multiline
             variant="standard"
             color="secondary"
-            margin="dense"
             fullWidth
+            rows={20}
+            onChange={formik.handleChange}
           />
-          <UploadImage photo={photoValue} photoReturn={photoReturn} />
-        </div>
-        <TextField
-          id="standard-textarea"
-          placeholder="Escriba su reporte aquí..."
-          multiline
-          variant="standard"
-          color="secondary"
-          fullWidth
-          rows={20}
-        />
-        <div className={styles['modal-type_report-assessment']}>
-          <FormControl component="fieldset">
-            <RadioGroup row aria-label="gender" name="row-radio-buttons-group">
+          <div className={styles['modal-type_report-assessment']}>
+            <RadioGroup
+              row
+              aria-label="gender"
+              name="typeReport"
+              onChange={formik.handleChange}
+            >
               <FormControlLabel
                 value="opinion"
                 control={
@@ -76,24 +88,26 @@ const Modal = ({ showCreateReport }) => {
                 label="Denuncia"
               />
             </RadioGroup>
-          </FormControl>
-          <Rating
-            sx={{
-              color: '#9A31E4',
-              fontSize: '2.5rem',
-              alignSelf: 'center',
-            }}
-            name="simple-controlled"
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-          />
-        </div>
-        <div className={styles['modal-buttons']}>
-          <Button fun={showCreateReport} className="close">Cancelar</Button>
-          <Button className="publish">Publicar</Button>
-        </div>
+            <Rating
+              sx={{
+                color: '#9A31E4',
+                fontSize: '2.5rem',
+                alignSelf: 'center',
+              }}
+              id="rating"
+              name="rating"
+              onChange={formik.handleChange}
+            />
+          </div>
+          <div className={styles['modal-buttons']}>
+            <Button fun={showCreateReport} className="close">
+              Cancelar
+            </Button>
+            <Button className="publish" type="submit">
+              Publicar
+            </Button>
+          </div>
+        </form>
       </div>
     </div>
   );
